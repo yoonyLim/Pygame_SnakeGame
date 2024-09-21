@@ -1,6 +1,6 @@
-
+import sys
 import pygame as pg
-from content.main_menu import main
+from content.main import main
 
 if __name__=='__main__':
     main()
