@@ -14,7 +14,8 @@ def updateScreenSize(option: int):
     elif option == 3:
         tools.setScreen(2560, 1440)
     else:
-        tools.setScreen(pg.display.set_mode().get_size()[0], pg.display.set_mode().get_size()[1])
+        gs.SCREEN_WIDTH, gs.SCREEN_HEIGHT = pg.display.set_mode().get_size()[0], pg.display.set_mode().get_size()[1]
+        pg.display.set_mode((0, 0), pg.FULLSCREEN)
 
 def updateGridSize(option: int):
     if option == 0:

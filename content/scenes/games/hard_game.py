@@ -19,6 +19,12 @@ bomb_y = getRandomInt(0, gs.SCREEN_HEIGHT - gs.GRID_SIZE)
 bomb_timer = 0
 shouldGetNewBomb = True
 
+def resetBombPos():
+    global bomb_x, bomb_y
+    
+    bomb_x = getRandomInt(0, gs.SCREEN_WIDTH - gs.GRID_SIZE)
+    bomb_y = getRandomInt(0, gs.SCREEN_HEIGHT - gs.GRID_SIZE)
+
 def getNewBomb(snake_x: int, snake_y: int, food_list: list[list[int, int]]):
     global bomb_x, bomb_y, shouldGetNewBomb
 

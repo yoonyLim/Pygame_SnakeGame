@@ -87,6 +87,7 @@ def update():
     global x, y, x_change, y_change, snake_list, snake_length, food_x, food_y, food_list, timer, score, isFeverTime, numFoodUntilFeverTime, numBonusFood, bomb_x, bomb_y
 
     if gs.FIRST_GAME_LOOP:
+        hard.resetBombPos()
         resetGame()
         gs.FIRST_GAME_LOOP = False
 
@@ -103,9 +104,8 @@ def update():
 
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
-                if event.key == pg.K_ESCAPE:
-                    pg.quit()
-                    quit()
+                if event.key == pg.K_ESCAPE or event.key == pg.K_TAB:
+                    gs.GAME_PAUSED = False
                 elif event.key == pg.K_DOWN or event.key == pg.K_s:
                     gs.PAUSE_CURRENT_OPTION_INDEX = (gs.PAUSE_CURRENT_OPTION_INDEX + 1) % len(LIST_BTNS)
                 elif event.key == pg.K_UP or event.key == pg.K_w:
