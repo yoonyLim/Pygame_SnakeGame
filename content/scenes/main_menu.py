@@ -21,9 +21,9 @@ def update():
         if event.type == pg.KEYDOWN:
             if event.key == pg.K_ESCAPE:
                 gs.GAME_CLOSE = True
-            elif event.key == pg.K_DOWN:
+            elif event.key == pg.K_DOWN or event.key == pg.K_s:
                 gs.MAIN_MENU_CURRENT_OPTION_INDEX = (gs.MAIN_MENU_CURRENT_OPTION_INDEX + 1) % len(LIST_BTNS)
-            elif event.key == pg.K_UP:
+            elif event.key == pg.K_UP or event.key == pg.K_w:
                 gs.MAIN_MENU_CURRENT_OPTION_INDEX = (gs.MAIN_MENU_CURRENT_OPTION_INDEX + len(LIST_BTNS) - 1) % len(LIST_BTNS)
             elif event.key == pg.K_RETURN:
                 gs.CURRENT_SCENE_INDEX = gs.MAIN_MENU_CURRENT_OPTION_INDEX + 1

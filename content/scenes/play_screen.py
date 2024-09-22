@@ -106,9 +106,9 @@ def update():
                 if event.key == pg.K_ESCAPE:
                     pg.quit()
                     quit()
-                elif event.key == pg.K_DOWN:
+                elif event.key == pg.K_DOWN or event.key == pg.K_s:
                     gs.PAUSE_CURRENT_OPTION_INDEX = (gs.PAUSE_CURRENT_OPTION_INDEX + 1) % len(LIST_BTNS)
-                elif event.key == pg.K_UP:
+                elif event.key == pg.K_UP or event.key == pg.K_w:
                     gs.PAUSE_CURRENT_OPTION_INDEX = (gs.PAUSE_CURRENT_OPTION_INDEX + len(LIST_BTNS) - 1) % len(LIST_BTNS)
                 elif event.key == pg.K_RETURN:
                     if gs.PAUSE_CURRENT_OPTION_INDEX == 0:
@@ -160,9 +160,9 @@ def update():
                     if event.key == pg.K_ESCAPE:
                         pg.quit()
                         quit()
-                    elif event.key == pg.K_DOWN:
+                    elif event.key == pg.K_DOWN or event.key == pg.K_s:
                         gs.PLAY_SCREEN_CURRENT_OPTION_INDEX = (gs.PLAY_SCREEN_CURRENT_OPTION_INDEX + 1) % len(LIST_BTNS)
-                    elif event.key == pg.K_UP:
+                    elif event.key == pg.K_UP or event.key == pg.K_w:
                         gs.PLAY_SCREEN_CURRENT_OPTION_INDEX = (gs.PLAY_SCREEN_CURRENT_OPTION_INDEX + len(LIST_BTNS) - 1) % len(LIST_BTNS)
                     elif event.key == pg.K_RETURN:
                         if gs.PLAY_SCREEN_CURRENT_OPTION_INDEX == 0:
@@ -212,16 +212,16 @@ def update():
     # get input
     for event in pg.event.get():
         if event.type == pg.KEYDOWN:
-            if event.key == pg.K_LEFT:
+            if event.key == pg.K_LEFT or event.key == pg.K_a:
                 x_change = -gs.GRID_SIZE
                 y_change = 0
-            elif event.key == pg.K_RIGHT:
+            elif event.key == pg.K_RIGHT or event.key == pg.K_d:
                 x_change = gs.GRID_SIZE
                 y_change = 0
-            elif event.key == pg.K_UP:
+            elif event.key == pg.K_UP or event.key == pg.K_w:
                 y_change = -gs.GRID_SIZE
                 x_change = 0
-            elif event.key == pg.K_DOWN:
+            elif event.key == pg.K_DOWN or event.key == pg.K_s:
                 y_change = gs.GRID_SIZE
                 x_change = 0
             elif event.key == pg.K_ESCAPE or event.key == pg.K_TAB:

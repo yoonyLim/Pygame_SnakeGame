@@ -94,11 +94,11 @@ def update():
         if event.type == pg.KEYDOWN:
             if event.key == pg.K_ESCAPE:
                 gs.GAME_CLOSE = True
-            elif event.key == pg.K_DOWN:
+            elif event.key == pg.K_DOWN or event.key == pg.K_s:
                 gs.OPTIONS_SCREEN_CURRENT_OPTION_INDEX = (gs.OPTIONS_SCREEN_CURRENT_OPTION_INDEX + 1) % (len(LIST_TXTBOXES) + 1)
-            elif event.key == pg.K_UP:
+            elif event.key == pg.K_UP or event.key == pg.K_w:
                 gs.OPTIONS_SCREEN_CURRENT_OPTION_INDEX = (gs.OPTIONS_SCREEN_CURRENT_OPTION_INDEX + len(LIST_TXTBOXES)) % (len(LIST_TXTBOXES) + 1)
-            elif event.key == pg.K_RIGHT:
+            elif event.key == pg.K_RIGHT or event.key == pg.K_d:
                 if gs.OPTIONS_SCREEN_CURRENT_OPTION_INDEX == 0:
                     gs.OPTIONS_SCREEN_CURRENT_RESOLUTION_TEMP_INDEX = (gs.OPTIONS_SCREEN_CURRENT_RESOLUTION_TEMP_INDEX + 1) % len(LIST_RESOLUTION_BTNS)
                 elif gs.OPTIONS_SCREEN_CURRENT_OPTION_INDEX == 1:
@@ -107,7 +107,7 @@ def update():
                     gs.OPTIONS_SCREEN_CURRENT_GRID_TEMP_INDEX = (gs.OPTIONS_SCREEN_CURRENT_GRID_TEMP_INDEX + 1) % len(LIST_GRID_BTNS)
                 elif gs.OPTIONS_SCREEN_CURRENT_OPTION_INDEX == 3:
                     gs.OPTIONS_SCREEN_CURRENT_GRID_SIZE_TEMP_INDEX = (gs.OPTIONS_SCREEN_CURRENT_GRID_SIZE_TEMP_INDEX + 1) % len(LIST_GRID_SIZE_BTNS)
-            elif event.key == pg.K_LEFT:
+            elif event.key == pg.K_LEFT or event.key == pg.K_a:
                 if gs.OPTIONS_SCREEN_CURRENT_OPTION_INDEX == 0:
                     gs.OPTIONS_SCREEN_CURRENT_RESOLUTION_TEMP_INDEX = (gs.OPTIONS_SCREEN_CURRENT_RESOLUTION_TEMP_INDEX + len(LIST_RESOLUTION_BTNS) - 1) % len(LIST_RESOLUTION_BTNS)
                 elif gs.OPTIONS_SCREEN_CURRENT_OPTION_INDEX == 1:

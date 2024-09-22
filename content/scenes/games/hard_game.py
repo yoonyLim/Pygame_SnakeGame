@@ -49,11 +49,11 @@ def play(snake_x: int, snake_y: int, food_list: list[list[int, int]]):
     
     # increase game speed every sec
     if fps_timer >= 1:
-        gs.FPS += 1
+        gs.FPS += gs.FPS_INCREMENT
         fps_timer = 0
 
     # for generating a new bomb per 5 sec
-    if bomb_timer >= 5:
+    if bomb_timer >= gs.BOMB_REDRAW_TIME:
         shouldGetNewBomb = True
         bomb_timer = 0
 
